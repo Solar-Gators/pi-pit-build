@@ -1,3 +1,11 @@
+# Bitbake directories
 tmp/
 cache/
+downloads/
+sstate-cache/
+# Bitbake log
 bitbake-cookerdaemon.log
+# Bitbake temp files
+bitbake.lock
+bitbake.sock
+hashserve.sock
