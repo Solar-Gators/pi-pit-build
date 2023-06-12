@@ -7,3 +7,6 @@
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded.git
+[submodule "tools/poky-container"]
+	path = tools/poky-container
+	url = https://github.com/crops/poky-container.git

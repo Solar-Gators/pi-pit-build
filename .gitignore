@@ -9,3 +9,5 @@ bitbake-cookerdaemon.log
 bitbake.lock
 bitbake.sock
 hashserve.sock
+# Release directory
+releases/
