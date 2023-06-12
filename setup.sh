@@ -62,7 +62,9 @@ echo "To setup the build environment and build run:"
 echo "[1] source layers/poky/oe-init-build-env ."
 echo "[2] ./build.sh"
 echo "To create a release run:"
-echo "[1] ./release.sh"
+echo "[1] source layers/poky/oe-init-build-env ."
+echo "[2] ./release.sh"
+echo "**NOTE** You only need to source the env setup script once per session"
 docker run --rm -it \
     --workdir=/workdir \
     -v $SCRIPT_DIR:/workdir \
