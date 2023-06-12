@@ -58,7 +58,11 @@ else
         --build-arg BASE_DISTRO=${BASE_CONTAINER} \
         --pull -t ${BUILD_CONTAINER}:${BASE_CONTAINER} .
 fi
-
+echo "To setup the build environment and build run:"
+echo "[1] source layers/poky/oe-init-build-env ."
+echo "[2] ./build.sh"
+echo "To create a release run:"
+echo "[1] ./release.sh"
 docker run --rm -it \
     --workdir=/workdir \
     -v $SCRIPT_DIR:/workdir \

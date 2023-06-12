@@ -9,5 +9,6 @@ bitbake-cookerdaemon.log
 bitbake.lock
 bitbake.sock
 hashserve.sock
-# Release directory
+# Script made files
+.bbenv.tmp
 releases/

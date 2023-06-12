@@ -7,13 +7,13 @@ Help()
    # Display Help
    echo "Add description of the script functions here."
    echo
-   echo "Syntax: scriptTemplate [-h|i|V]"
+   echo "Syntax: scriptTemplate [-h|i|v|s|e]"
    echo "options:"
    echo "h     Print this Help."
    echo "i     Image name."
    echo "v     Script version."
-   echo "sdk   Build an SDK for this image."
-   echo "esdk  Build an Extensible SDK for this image."
+   echo "s     Build an SDK for this image."
+   echo "e     Build an Extensible SDK for this image."
    echo
 }
 
@@ -29,7 +29,7 @@ BUILD_ESDK=false
 # Process the input options.                               #
 ############################################################
 # Get the options
-while getopts ":hn:" option; do
+while getopts ":hi:vse" option; do
    case $option in
       h) # display Help
          Help
@@ -39,9 +39,11 @@ while getopts ":hn:" option; do
       v) # Print script version
          echo $SCRIPT_VERSION
          exit;;
-      sdk)
+      s)
+         echo "Building SDK"
          BUILD_SDK=true;;
-      esdk)
+      e)
+         echo "Building ESDK"
          BUILD_ESDK=true;;
      \?) # Invalid option
          echo "Error: Invalid option"

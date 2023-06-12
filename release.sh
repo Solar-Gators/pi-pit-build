@@ -59,7 +59,7 @@ IMAGE_FSTYPES=$(grep ^IMAGE_FSTYPES= $BITBAKE_ENV_FILE | cut -d'"' -f2)
 rm $BITBAKE_ENV_FILE
 
 # Call the build script then we will do things with the output
-./build.sh -i $TARGET_IMAGE --sdk --esdk
+./build.sh -i $TARGET_IMAGE -s -e
 
 # Put the built image, sdk installer, and esdk installer in an archive
 TIME_STAMP=`date +"%Y%m%d-%H%M%S"`
@@ -85,10 +85,10 @@ cp --dereference "$DEPLOY_DIR_IMAGE/$IMAGE_NAME.testdata.json" "$THIS_RELEASE_DI
 cp --dereference "$DEPLOY_DIR_IMAGE/$IMAGE_NAME.manifest" "$THIS_RELEASE_DIR"
 
 # Copy the sdk
-cp -a "$SDKDEPLOYDIR/." "$THIS_RELEASE_DIR/sdk"
+cp -a $SDKDEPLOYDIR/. "$THIS_RELEASE_DIR/sdk"
 
 # Copy the esdk
-cp -a "$SDKEXTDEPLOYDIR/." "$THIS_RELEASE_DIR/esdk"
+cp -a $SDKEXTDEPLOYDIR/. "$THIS_RELEASE_DIR/esdk"
 
 # Archive the release
 pushd $RELEASE_DIR
